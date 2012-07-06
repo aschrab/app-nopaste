@@ -80,9 +80,23 @@ __END__
 
 App::Nopaste::Service::Gist - http://gist.github.com/
 
+=head1 AUTHORIZATION
+
+If you would like to have your gists associated with a github account, you
+will need to generate an OAUTH token to allow this.  This may be done
+using the following command:
+
+    curl -u USERNAME -d '{"scopes":["gist"],"note":"nopaste"}' https://api.github.com/authorizations
+
+Look for the line specifying the token that was created, which should be
+around 40 hexadecimal characters.  Copy that token into a C<.gist_token>
+file in your home directory.
+
 =head1 AUTHOR
 
 Ricardo SIGNES, C<< <rjbs@cpan.org> >>
+
+Aaron Schrab C<< <aaron@schrab.com> >>
 
 =cut
 
